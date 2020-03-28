@@ -45,7 +45,7 @@ class BaseModel():
                                         self.X,
                                         self.y,
                                         cv=self.cv_folds,
-                                        scoring=self.scoring))
+                                        scoring=self.scoring, n_jobs=-1))
         self.score = score
         return score
 

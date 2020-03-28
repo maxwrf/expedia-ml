@@ -1,4 +1,5 @@
 from sklearn.model_selection import ParameterGrid
+from joblib import Parallel, delayed
 
 
 class GridSearch():
@@ -14,10 +15,16 @@ class GridSearch():
         params = self.model.get_grid_search_parameters()
         grid = list(ParameterGrid(params))
 
-        for param_comb in grid:
-            score = self.model(self.config, self.X, self.y, param_comb)\
-                .calc_cross_val_score()
+        scores = Parallel(n_jobs=-1)(delayed(self.calc)(param_comb) for param_comb in grid)
+
+        for score, param_comb in zip(scores, grid):
+            print(score, param_comb)
             self.results.append({'params': param_comb, 'score': score})
+
+    def calc(self, param_comb):
+        score = self.model(self.config, self.X, self.y, param_comb)\
+            .calc_cross_val_score()
+        return score
 
     def get_best_result(self):
         return max(self.results,

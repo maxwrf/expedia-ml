@@ -4,10 +4,12 @@ from source.data.features import Features
 from source.models.decision_tree import DecisionTree
 from source.models.random_forest import RandomForest
 from source.models.xg_boost import XGBoost
+from source.models.neural_network import NeuralNetwork
 from source.hyperparamters.grid_search import GridSearch
 
 
 def run(config):
+    """DATA HANDLING"""
     if not config.getboolean('Features', 'use_prepared'):
         d = Data(config)
         d.download_data()
@@ -26,9 +28,11 @@ def run(config):
     y_train = f.df_train['hotel_cluster']
     # X_test = f.df_test
 
+    """MODELS AND GRID SEARCH"""
     models = [
         {'model': DecisionTree, 'fitted': None},
-        {'model': RandomForest, 'fitted': None}
+        {'model': RandomForest, 'fitted': None},
+        {'model': NeuralNetwork, 'fitted': None},
     ]
 
     for m in models:
@@ -59,5 +63,11 @@ def run(config):
     xgb.calc_cross_val_score()
     print(xgb.score)
 
+    if config.getboolean('GridSearch', 'perform_grid_search'):
+        gs = GridSearch(config, XGBoost, X_train, y_train)
+        gs.search()
+        gs.print_best_results()
+
+    """DATA REMOVAL"""
     if config.get('Data', 'remove_after_run') == 'True':
         d.remove_data()

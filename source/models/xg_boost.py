@@ -19,3 +19,7 @@ class XGBoost(BaseModel):
                 'eta': 0.1,
                 'objective': 'multi:softprob',
                 'random_state': 420}
+
+    @staticmethod
+    def get_grid_search_parameters():
+        return [{'eta': [0.1, 1]}]

@@ -4,14 +4,16 @@ from sklearn.model_selection import cross_val_score
 
 
 class BaseModel():
-    def __init__(self, config,  X, y, params):
+    def __init__(self, config, X, y, params):
+        self.config = config
         self.X = X
         self.y = y
         self.cv_folds = config.getint('Models', 'cvFolds')
         self.scoring = config.get('Models', 'scoring')
         self.clf = None
         self.clf_name = 'base_model'
-        self.grid_search_results = None
+        self.best_grid_search_results = None
+        self.best_grid_search_model = None
         self.intizalize_model(params)
 
     def intizalize_model(self, params):
@@ -26,6 +28,10 @@ class BaseModel():
 
     @abstractmethod
     def get_default_parameter(self):
+        pass
+
+    @abstractmethod
+    def get_grid_search_parameters(self):
         pass
 
     def train_model(self):

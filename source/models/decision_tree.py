@@ -12,3 +12,9 @@ class DecisionTree(BaseModel):
 
     def get_default_parameter(self):
         return {'max_depth': 10, 'random_state': 420}
+
+    @staticmethod
+    def get_grid_search_parameters():
+        return [{'max_depth': [10, 50],
+                 'criterion':['gini', 'entropy']
+                 }]

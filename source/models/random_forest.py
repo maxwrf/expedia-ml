@@ -12,3 +12,13 @@ class RandomForest(BaseModel):
 
     def get_default_parameter(self):
         return {'random_state': 420}
+
+    @staticmethod
+    def get_grid_search_parameters():
+        return [{'bootstrap': [True, False],
+                 'max_depth': [10, 70],
+                 'max_features': ['auto', 'sqrt'],
+                 'min_samples_leaf': [1, 4],
+                 'min_samples_split': [2, 10],
+                 'n_estimators': [100, 2000]
+                 }]

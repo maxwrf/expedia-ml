@@ -4,6 +4,7 @@ from source.data.features import Features
 from source.models.decision_tree import DecisionTree
 from source.models.random_forest import RandomForest
 from source.models.xg_boost import XGBoost
+from source.hyperparamters.grid_search import GridSearch
 
 
 def run(config):
@@ -15,24 +16,37 @@ def run(config):
         f = Features(config, d.df_train, d.df_test)
     else:
         f = Features(config)
-    f.prepare_df_test()
+
     f.prepare_df_train()
+
+    if config.getboolean('General', 'use_test'):
+        f.prepare_df_test()
 
     X_train = f.df_train.drop(['hotel_cluster'], axis=1)
     y_train = f.df_train['hotel_cluster']
     # X_test = f.df_test
 
-    tree = DecisionTree(config, X_train, y_train)
-    tree.train_model()
-    tree.calc_cross_val_score()
-    print(tree.score)
+    models = [
+        {'model': DecisionTree, 'fitted': None},
+        {'model': RandomForest, 'fitted': None}
+    ]
 
-    forest = RandomForest(config, X_train, y_train)
-    forest.train_model()
-    forest.calc_cross_val_score()
-    print(forest.score)
+    for m in models:
+        fitted_model = m['model'](config, X_train, y_train)
+        fitted_model.train_model()
+        fitted_model.calc_cross_val_score()
+        m['fitted'] = fitted_model
+        print(fitted_model.clf_name, fitted_model.score)
+
+    if config.getboolean('GridSearch', 'perform_grid_search'):
+        for m in models:
+            not_fitted_model = m['model']
+            gs = GridSearch(config, not_fitted_model, X_train, y_train)
+            gs.search()
+            gs.print_best_results()
 
     # TODO: Can the xg_boost ever take in all the features?
+    forest = models[1]['fitted']
     feature_importances = pd.DataFrame(forest.clf.feature_importances_,
                                        index=X_train.columns,
                                        columns=['importance'])\

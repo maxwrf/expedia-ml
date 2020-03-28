@@ -1,12 +1,13 @@
-from time import time
-from datetime import timedelta
-from source.run import run
-import configparser
+import time
 from pathlib import Path
+import configparser
+from source.run import run
+import warnings
 
 
 def main():
-    start = time()
+    warnings.simplefilter("ignore")
+    start_time = time.time()
 
     # Load configs
     config = configparser.ConfigParser()
@@ -17,9 +18,8 @@ def main():
     # run the main process
     run(config)
 
-    end = time()
-    delta = (timedelta(end - start))
-    print(delta)
+    # print execution time
+    print("--- %s minutes ---" % ((time.time() - start_time) / 60))
 
 
 if __name__ == "__main__":

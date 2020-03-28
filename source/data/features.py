@@ -4,8 +4,10 @@ import pandas as pd
 
 
 class Features():
-    def __init__(self, config, df_train, df_test):
-        self.save_prepared = config.get('Features', 'save_prepared')
+    def __init__(self, config, df_train=None, df_test=None):
+        self.config = config
+        self.save_prepared = config.getboolean('Features', 'save_prepared')
+        self.use_prepared = config.getboolean('Features', 'use_prepared')
         self.df_train = df_train
         self.df_test = df_test
         self.project_path = config.get('General', 'path')
@@ -131,6 +133,16 @@ class Features():
 
     def prepare_df_train(self):
         """Function to build features for train df"""
+        if self.use_prepared:
+            self.df_train = pd.read_csv(self.data_path + 'prepared_train.csv')
+            print('Loaded prepared train data...')
+
+            # Warn config train len not the same as the prepared one
+            print(f'WARNING: The loaded train data has a different len than\
+                  given in the config. train len is {len(self.df_train)}')
+
+            return
+
         self.df_train = Features.fillna_convert(self.df_train)
         self.df_train = Features.parallel_feature_engineering(self.df_train,
                                                               self.df_train)
@@ -143,11 +155,21 @@ class Features():
         print(f'Dropped {len_before - len(self.df_train)} rows which did not\
                 represent a booking in df train.')
 
-        if self.save_prepared:
+        if self.save_prepared and not self.use_prepared:
             self.df_train.to_csv(self.data_path + 'prepared_train.csv')
 
     def prepare_df_test(self):
         """Function to build features for train df"""
+        if self.use_prepared:
+            self.df_test = pd.read_csv(self.data_path + 'prepared_test.csv')
+            print('Loaded prepared train data...')
+
+            # Warn if config test len not the same as the prepared one
+            if self.config.getint('Data', 'test_rows') != len(self.df_test):
+                print('# WARNING: The loaded test data has a different len than\
+                        given in the config')
+            return
+
         self.df_test = Features.fillna_convert(self.df_test)
         df_train = Features.fillna_convert(self.df_train)
 
@@ -164,5 +186,5 @@ class Features():
                                           'hotel_cluster', 'id'], axis=1)
         self.df_test = Features.finalize(self.df_test)
 
-        if self.save_prepared:
+        if self.save_prepared and not self.use_prepared:
             self.df_test.to_csv(self.data_path + 'prepared_test.csv')

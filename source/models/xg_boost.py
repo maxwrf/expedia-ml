@@ -11,4 +11,11 @@ class XGBoost(BaseModel):
         return XGBClassifier
 
     def get_default_parameter(self):
-        return {'n_jobs': -1, 'max_depth': 2, 'eta': 1, 'random_state': 420}
+        """
+        Defaults to objective='binary:logistic' and One vs rest
+        """
+        return {'n_jobs': -1,
+                'max_depth': 2,
+                'eta': 0.1,
+                'objective': 'multi:softprob',
+                'random_state': 420}

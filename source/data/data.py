@@ -16,8 +16,9 @@ class Data():
         self.is_development = 'True' == config.get('General', 'is_development')
         self.write_sample_files = 'True' == config.get('Data',
                                                        'write_sample_files')
-        self.train_rows = int(config.get('Data', 'train_rows'))
-        self.test_rows = int(config.get('Data', 'test_rows'))
+        self.train_rows = config.getint('Data', 'train_rows')
+        self.test_rows = config.getint('Data', 'test_rows')
+        self.remove_after_run = config.getboolean('Data', 'remove_after_run')
 
     def download_data(self):
 
@@ -92,6 +93,9 @@ class Data():
         self.df_train = df_train
         self.df_test = df_test
         self.df_destination = df_destination
+
+        if self.remove_after_run:
+            self.remove_data()
 
     def remove_data(self):
         print('Removing files from hard drive...')

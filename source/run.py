@@ -7,11 +7,14 @@ from source.models.xg_boost import XGBoost
 
 
 def run(config):
-    d = Data(config)
-    d.download_data()
-    d.load_data()
+    if not config.getboolean('Features', 'use_prepared'):
+        d = Data(config)
+        d.download_data()
+        d.load_data()
 
-    f = Features(config, d.df_train, d.df_test)
+        f = Features(config, d.df_train, d.df_test)
+    else:
+        f = Features(config)
     f.prepare_df_test()
     f.prepare_df_train()
 

@@ -3,6 +3,7 @@ from pathlib import Path
 import configparser
 from source.run import run
 import warnings
+from source.utilities.configure_logger import configure_logger
 
 
 def main():
@@ -14,6 +15,9 @@ def main():
     userconfig = 'Config/config.ini'
     userConfig = Path(userconfig)
     config.read(userConfig)
+
+    # configure logger
+    configure_logger(config)
 
     # run the main process
     run(config)

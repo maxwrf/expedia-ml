@@ -1,9 +1,12 @@
 import gc
 from sklearn.model_selection import ParameterGrid
 from joblib import Parallel, delayed
+import logging
 
 
 class GridSearch():
+    logger = logging.getLogger('pipeline.run.grid_search')
+
     def __init__(self, config, model, X, y):
         self.config = config
         self.model = model
@@ -20,7 +23,7 @@ class GridSearch():
         scores = Parallel(n_jobs=-1)(delayed(self.calc)(param_comb) for param_comb in grid)
 
         for score, param_comb in zip(scores, grid):
-            print(score, param_comb)
+            GridSearch.logger.info(f'{param_comb} | {score}')
             self.results.append({'params': param_comb, 'score': score})
 
     def calc(self, param_comb):
@@ -30,7 +33,7 @@ class GridSearch():
         del clf.y
         del clf
         gc.collect()
-        print(param_comb, '|', score)
+        GridSearch.logger.info(f'{param_comb} | {score}')
         return score
 
     def get_best_result(self):
@@ -39,7 +42,7 @@ class GridSearch():
 
     def print_best_results(self):
         params, score = self.get_best_result()
-        print(f'Best model after Grid Search | Params: {params},\
+        GridSearch.logger.info(f'Best model after Grid Search | Params: {params},\
                 score: {score}')
 
     def get_best_model(self):

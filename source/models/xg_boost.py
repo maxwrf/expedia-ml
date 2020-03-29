@@ -16,8 +16,8 @@ class XGBoost(BaseModel):
         """
         return {'n_jobs': -1,
                 'max_depth': 2,
-                'eta': 1,
-                'random_state': 420}
+                'eta': 1
+                }
 
     @staticmethod
     def get_grid_search_parameters():

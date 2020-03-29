@@ -1,9 +1,15 @@
 import numpy as np
 from multiprocessing import Pool
 import pandas as pd
+import logging
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 
 class Features():
+    pipeline = Pipeline([('std_scaler', StandardScaler())])
+    logger = logging.getLogger('pipeline.run.features')
+
     def __init__(self, config, df_train=None, df_test=None):
         self.config = config
         self.save_prepared = config.getboolean('Features', 'save_prepared')
@@ -12,6 +18,16 @@ class Features():
         self.df_test = df_test
         self.project_path = config.get('General', 'path')
         self.data_path = self.project_path + '/data/'
+
+    @staticmethod
+    def scale_features(X_train, X_test=None):
+        Features.logger.info('Scaling Features')
+        Features.pipeline.fit(X_train)
+        if X_test:
+            return Features.pipeline.transform(X_train),
+            Features.pipeline.transform(X_test)
+        else:
+            return Features.pipeline.transform(X_train)
 
     @staticmethod
     def fillna_convert(df):
@@ -135,10 +151,10 @@ class Features():
         """Function to build features for train df"""
         if self.use_prepared:
             self.df_train = pd.read_csv(self.data_path + 'prepared_train.csv')
-            print('Loaded prepared train data...')
+            Features.logger.info('Loaded prepared train data')
 
             # Warn config train len not the same as the prepared one
-            print(f'WARNING: The loaded train data has a different len than\
+            Features.logger.info('The loaded train data has a different len than\
                   given in the config. train len is {len(self.df_train)}')
 
             return
@@ -152,7 +168,7 @@ class Features():
         len_before = len(self.df_train)
         self.df_train = self.df_train[self.df_train['is_booking'] == 1]
         self.df_train = self.df_train.drop('is_booking', axis=1)
-        print(f'Dropped {len_before - len(self.df_train)} rows which did not\
+        Features.logger.info(f'Dropped {len_before - len(self.df_train)} rows which did not\
                 represent a booking in df train.')
 
         if self.save_prepared and not self.use_prepared:
@@ -162,11 +178,11 @@ class Features():
         """Function to build features for train df"""
         if self.use_prepared:
             self.df_test = pd.read_csv(self.data_path + 'prepared_test.csv')
-            print('Loaded prepared train data...')
+            Features.logger.info('Loaded prepared train data...')
 
             # Warn if config test len not the same as the prepared one
             if self.config.getint('Data', 'test_rows') != len(self.df_test):
-                print('# WARNING: The loaded test data has a different len than\
+                Features.logger.info('The loaded test data has a different len than\
                         given in the config')
             return
 

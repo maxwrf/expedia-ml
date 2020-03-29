@@ -27,14 +27,35 @@ class NeuralNetwork(BaseModel):
 
     def create_network(self):
         nn = models.Sequential()
-        nn.add(layers.Dense(units=128,
+        nn.add(layers.Dense(units=512,
                             activation='relu',
                             input_shape=(self.X.shape[1],)
                             ))
-        nn.add(layers.Dense(units=128,
-                            activation='relu',
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=256,
+                            activation='relu'
                             ))
-        nn.add(Dropout(0.5))
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=256,
+                            activation='relu'
+                            ))
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=128,
+                            activation='relu'
+                            ))
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=64,
+                            activation='relu'
+                            ))
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=64,
+                            activation='relu'
+                            ))
+        nn.add(Dropout(0.25))
+        nn.add(layers.Dense(units=32,
+                            activation='relu'
+                            ))
+        nn.add(Dropout(0.25))
         nn.add(layers.Dense(units=len(pd.unique(self.y)),
                             activation='softmax'
                             ))

@@ -1,6 +1,9 @@
 from abc import abstractmethod
 import numpy as np
 from sklearn.model_selection import cross_val_score
+import warnings
+
+warnings.simplefilter("ignore")
 
 
 class BaseModel():

@@ -20,5 +20,5 @@ class RandomForest(BaseModel):
                  'max_features': ['auto', 'sqrt'],
                  'min_samples_leaf': [1, 4],
                  'min_samples_split': [2, 10],
-                 'n_estimators': [100, 2000]
+                 'n_estimators': [100, 200]
                  }]

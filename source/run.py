@@ -24,8 +24,8 @@ def run(config):
     if config.getboolean('General', 'use_test'):
         f.prepare_df_test()
 
-    X_train = f.df_train.drop(['hotel_cluster'], axis=1)
-    y_train = f.df_train['hotel_cluster']
+    X_train = f.df_train.drop(['hotel_cluster'], axis=1).to_numpy()
+    y_train = f.df_train['hotel_cluster'].to_numpy()
     # X_test = f.df_test
 
     """MODELS AND GRID SEARCH"""
@@ -48,6 +48,7 @@ def run(config):
             gs = GridSearch(config, not_fitted_model, X_train, y_train)
             gs.search()
             gs.print_best_results()
+            del gs
 
     # TODO: Can the xg_boost ever take in all the features?
     forest = models[1]['fitted']

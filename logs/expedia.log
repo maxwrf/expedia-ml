@@ -237,3 +237,300 @@
 2020-03-30 00:20:56,515 - pipeline.run.features - INFO - Scaling Features
 2020-03-30 00:20:56,550 - pipeline.run - INFO - Fit models
 2020-03-30 00:21:00,216 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 00:21:16,612 - pipeline.run - INFO - Random Forest | Score: 0.4729141475211608
+2020-03-30 00:25:28,061 - pipeline.run - INFO - NeuralNetwork | Score: 0.39141475211608223
+2020-03-30 00:25:28,063 - pipeline.run - INFO - Perform grid search
+2020-03-30 00:33:14,216 - pipeline.run - INFO - XGB | Score: 0.3946795646916566
+2020-03-30 00:33:14,217 - pipeline.run - INFO - Remove data from hard drive
+2020-03-30 13:57:12,070 - pipeline.run - INFO - Data handling
+2020-03-30 13:57:12,071 - pipeline.run - INFO - Loading prepared data
+2020-03-30 13:57:12,245 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 13:57:12,245 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 13:57:12,272 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 13:57:12,320 - pipeline.run - INFO - Fit models
+2020-03-30 14:03:18,988 - pipeline.run - INFO - Data handling
+2020-03-30 14:03:18,989 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:03:19,212 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:03:19,212 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:03:37,602 - pipeline.run - INFO - Data handling
+2020-03-30 14:03:37,602 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:03:37,812 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:03:37,813 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:04:49,754 - pipeline.run - INFO - Data handling
+2020-03-30 14:04:49,754 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:04:49,957 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:04:49,957 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:05:18,991 - pipeline.run - INFO - Data handling
+2020-03-30 14:05:18,991 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:05:19,194 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:05:19,194 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:06:42,581 - pipeline.run - INFO - Data handling
+2020-03-30 14:06:42,581 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:06:42,781 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:06:42,781 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:08:28,982 - pipeline.run - INFO - Data handling
+2020-03-30 14:08:28,983 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:08:29,196 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:08:29,196 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:09:09,316 - pipeline.run - INFO - Data handling
+2020-03-30 14:09:09,317 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:09:09,532 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:09:09,532 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:10:22,043 - pipeline.run - INFO - Data handling
+2020-03-30 14:10:22,044 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:10:22,269 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:10:22,270 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:11:01,343 - pipeline.run - INFO - Data handling
+2020-03-30 14:11:01,344 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:11:01,561 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:11:01,561 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:12:16,289 - pipeline.run - INFO - Data handling
+2020-03-30 14:12:16,289 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:12:16,504 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:12:16,504 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:13:16,672 - pipeline.run - INFO - Data handling
+2020-03-30 14:13:16,673 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:13:16,890 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:13:16,890 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:13:54,640 - pipeline.run - INFO - Data handling
+2020-03-30 14:13:54,640 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:13:54,847 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:13:54,847 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:13:55,968 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:13:56,008 - pipeline.run - INFO - Fit models
+2020-03-30 14:13:59,886 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:15:30,502 - pipeline.run - INFO - Data handling
+2020-03-30 14:15:30,502 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:15:30,730 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:15:30,730 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:15:31,930 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:15:31,961 - pipeline.run - INFO - Fit models
+2020-03-30 14:16:30,376 - pipeline.run - INFO - Data handling
+2020-03-30 14:16:30,377 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:16:30,590 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:16:30,590 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:16:31,965 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:16:31,994 - pipeline.run - INFO - Fit models
+2020-03-30 14:16:35,613 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:19:29,746 - pipeline.run - INFO - Data handling
+2020-03-30 14:19:29,746 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:19:29,957 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:19:29,958 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:19:30,792 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:19:30,821 - pipeline.run - INFO - Fit models
+2020-03-30 14:19:34,473 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:20:03,346 - pipeline.run - INFO - Data handling
+2020-03-30 14:20:03,346 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:20:03,555 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:20:03,555 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:20:04,386 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:20:04,415 - pipeline.run - INFO - Fit models
+2020-03-30 14:20:08,043 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:20:41,459 - pipeline.run - INFO - Data handling
+2020-03-30 14:20:41,459 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:20:41,683 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:20:41,684 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:20:42,991 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:20:43,020 - pipeline.run - INFO - Fit models
+2020-03-30 14:20:46,848 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:27:35,770 - pipeline.run - INFO - Data handling
+2020-03-30 14:27:35,770 - pipeline.run - INFO - Loading prepared data
+2020-03-30 14:27:35,976 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 14:27:35,976 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 14:27:37,300 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 14:27:37,338 - pipeline.run - INFO - Fit models
+2020-03-30 14:27:41,005 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 14:27:58,560 - pipeline.run - INFO - Random Forest | Score: 0.4729141475211608
+2020-03-30 15:28:21,355 - pipeline.run - INFO - Data handling
+2020-03-30 15:28:21,356 - pipeline.run - INFO - Loading prepared data
+2020-03-30 15:28:21,566 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 15:28:21,566 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 15:28:22,965 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 15:28:22,999 - pipeline.run - INFO - Fit models
+2020-03-30 15:28:26,799 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 15:28:44,257 - pipeline.run - INFO - Random Forest | Score: 0.4729141475211608
+2020-03-30 15:32:30,757 - pipeline.run - INFO - NeuralNetwork | Score: 0.3821039903264813
+2020-03-30 15:32:30,760 - pipeline.run - INFO - Perform grid search
+2020-03-30 15:40:58,154 - pipeline.run - INFO - XGB | Score: 0.3946795646916566
+2020-03-30 15:40:58,156 - pipeline.run - INFO - Remove data from hard drive
+2020-03-30 15:43:54,360 - pipeline.run - INFO - Data handling
+2020-03-30 15:43:54,360 - pipeline.run - INFO - Loading prepared data
+2020-03-30 15:43:54,562 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 15:43:54,562 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 15:43:55,898 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 15:43:55,927 - pipeline.run - INFO - Fit models
+2020-03-30 15:43:59,488 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 15:52:18,256 - pipeline.run - INFO - XGB | Score: 0.3946795646916566
+2020-03-30 15:52:18,258 - pipeline.run - INFO - Remove data from hard drive
+2020-03-30 16:02:27,497 - pipeline.run - INFO - Data handling
+2020-03-30 16:02:27,498 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:02:27,731 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:02:27,732 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:02:29,122 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:02:29,153 - pipeline.run - INFO - Fit models
+2020-03-30 16:02:33,219 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:10:57,182 - pipeline.run - INFO - XGB | Score: 0.3946795646916566
+2020-03-30 16:10:57,185 - pipeline.run - INFO - Remove data from hard drive
+2020-03-30 16:20:29,481 - pipeline.run - INFO - Data handling
+2020-03-30 16:20:29,482 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:20:29,649 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:20:29,649 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:20:31,037 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:20:31,069 - pipeline.run - INFO - Fit models
+2020-03-30 16:20:34,697 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:21:07,496 - pipeline.run - INFO - Data handling
+2020-03-30 16:21:07,497 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:21:07,666 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:21:07,666 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:21:09,065 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:21:09,096 - pipeline.run - INFO - Fit models
+2020-03-30 16:21:12,810 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:21:38,424 - pipeline.run - INFO - Data handling
+2020-03-30 16:21:38,425 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:21:38,589 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:21:38,589 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:21:39,944 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:21:39,973 - pipeline.run - INFO - Fit models
+2020-03-30 16:21:43,841 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:24:16,994 - pipeline.run - INFO - Data handling
+2020-03-30 16:24:16,994 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:24:17,156 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:24:17,156 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:24:18,493 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:24:18,521 - pipeline.run - INFO - Fit models
+2020-03-30 16:24:22,364 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:26:03,383 - pipeline.run - INFO - Data handling
+2020-03-30 16:26:03,383 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:26:03,549 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:26:03,550 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:26:04,880 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:26:04,909 - pipeline.run - INFO - Fit models
+2020-03-30 16:26:08,614 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:27:26,411 - pipeline.run - INFO - Data handling
+2020-03-30 16:27:26,412 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:27:26,568 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:27:26,568 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:27:27,895 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:27:27,924 - pipeline.run - INFO - Fit models
+2020-03-30 16:27:31,557 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:36:26,810 - pipeline.run - INFO - XGB | Score: 0.3946795646916566
+2020-03-30 16:36:26,812 - pipeline.run - INFO - Remove data from hard drive
+2020-03-30 16:36:56,576 - pipeline.run - INFO - Data handling
+2020-03-30 16:36:56,577 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:36:56,741 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:36:56,742 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:36:58,103 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:36:58,132 - pipeline.run - INFO - Fit models
+2020-03-30 16:37:01,893 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:44:15,085 - pipeline.run - INFO - Data handling
+2020-03-30 16:44:15,085 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:44:15,260 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:44:15,260 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:44:16,628 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:44:16,659 - pipeline.run - INFO - Fit models
+2020-03-30 16:45:34,037 - pipeline.run - INFO - Data handling
+2020-03-30 16:45:34,038 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:45:34,207 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:45:34,207 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:45:35,561 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:45:35,593 - pipeline.run - INFO - Fit models
+2020-03-30 16:49:44,879 - pipeline.run - INFO - Data handling
+2020-03-30 16:49:44,880 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:49:45,108 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:49:45,108 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:49:46,474 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:49:46,506 - pipeline.run - INFO - Fit models
+2020-03-30 16:49:50,217 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 16:54:10,647 - pipeline.run - INFO - Data handling
+2020-03-30 16:54:10,647 - pipeline.run - INFO - Loading prepared data
+2020-03-30 16:54:10,860 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 16:54:10,860 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 16:54:12,206 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 16:54:12,236 - pipeline.run - INFO - Fit models
+2020-03-30 16:54:15,840 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 17:05:26,504 - pipeline.run - INFO - XGB | Score: 0.3902055622732769
+2020-03-30 17:10:17,443 - pipeline.run - INFO - Data handling
+2020-03-30 17:10:17,444 - pipeline.run - INFO - Loading prepared data
+2020-03-30 17:10:17,660 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 17:10:17,661 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 17:10:19,070 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 17:10:19,102 - pipeline.run - INFO - Fit models
+2020-03-30 17:10:22,748 - pipeline.run - INFO - Decision Tree | Score: 0.4066505441354293
+2020-03-30 17:10:40,982 - pipeline.run - INFO - Random Forest | Score: 0.4729141475211608
+2020-03-30 17:14:35,689 - pipeline.run - INFO - NeuralNetwork | Score: 0.39262394195888756
+2020-03-30 17:56:52,536 - pipeline.run - INFO - XGB Boost | Score: 0.5465538089480046
+2020-03-30 17:58:30,389 - pipeline.run - INFO - Data handling
+2020-03-30 17:58:30,390 - pipeline.run - INFO - Loading and preparing data
+2020-03-30 17:58:30,390 - pipeline.run.data - INFO - Data already loaded
+2020-03-30 17:58:30,390 - pipeline.run.data - INFO - Loading data into memory / dataframe
+2020-03-30 17:58:32,086 - pipeline.run.data - INFO - Writing sample files...
+2020-03-30 17:58:36,039 - pipeline.run.data - INFO - Finished writing sample files...
+2020-03-30 17:58:36,039 - pipeline.run.data - INFO - Finished loading data into memory / dataframe
+2020-03-30 18:02:13,387 - pipeline.run - INFO - Data handling
+2020-03-30 18:02:13,387 - pipeline.run - INFO - Loading and preparing data
+2020-03-30 18:02:13,388 - pipeline.run.data - INFO - Data already loaded
+2020-03-30 18:02:13,388 - pipeline.run.data - INFO - Loading data into memory / dataframe
+2020-03-30 18:02:15,037 - pipeline.run.data - INFO - Writing sample files...
+2020-03-30 18:02:19,054 - pipeline.run.data - INFO - Finished writing sample files...
+2020-03-30 18:02:19,054 - pipeline.run.data - INFO - Finished loading data into memory / dataframe
+2020-03-30 18:52:26,210 - pipeline.run.features - INFO - Dropped 183331 rows which did not                represent a booking in df train.
+2020-03-30 18:52:30,253 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 18:52:30,307 - pipeline.run - INFO - Fit models
+2020-03-30 18:52:34,250 - pipeline.run - INFO - Decision Tree | Score: 0.4200013462654004
+2020-03-30 18:52:53,071 - pipeline.run - INFO - Random Forest | Score: 0.4976906328905236
+2020-03-30 18:56:16,091 - pipeline.run - INFO - NeuralNetwork | Score: 0.4151412561772074
+2020-03-30 19:43:49,695 - pipeline.run - INFO - XGB Boost | Score: 0.5507824627693724
+2020-03-30 21:42:27,997 - pipeline.run - INFO - Data handling
+2020-03-30 21:42:27,998 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:42:28,346 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:42:28,347 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:42:59,198 - pipeline.run - INFO - Data handling
+2020-03-30 21:42:59,198 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:42:59,542 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:42:59,542 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:43:26,520 - pipeline.run - INFO - Data handling
+2020-03-30 21:43:26,520 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:43:26,850 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:43:26,850 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:44:46,527 - pipeline.run - INFO - Data handling
+2020-03-30 21:44:46,528 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:44:46,878 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:44:46,879 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:46:25,609 - pipeline.run - INFO - Data handling
+2020-03-30 21:46:25,609 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:46:25,948 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:46:25,948 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:47:36,130 - pipeline.run - INFO - Data handling
+2020-03-30 21:47:36,131 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:47:36,474 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:47:36,475 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:47:38,048 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 21:47:38,122 - pipeline.run - INFO - Fit models
+2020-03-30 21:50:41,487 - pipeline.run - INFO - Data handling
+2020-03-30 21:50:41,488 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:50:41,822 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:50:41,822 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:50:43,404 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 21:50:43,474 - pipeline.run - INFO - Fit models
+2020-03-30 21:58:42,244 - pipeline.run - INFO - Data handling
+2020-03-30 21:58:42,244 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:58:42,587 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:58:42,587 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:59:45,075 - pipeline.run - INFO - Data handling
+2020-03-30 21:59:45,075 - pipeline.run - INFO - Loading prepared data
+2020-03-30 21:59:45,412 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 21:59:45,412 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 21:59:47,142 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 21:59:47,218 - pipeline.run - INFO - Fit models
+2020-03-30 22:01:14,073 - pipeline.run - INFO - Data handling
+2020-03-30 22:01:14,073 - pipeline.run - INFO - Loading prepared data
+2020-03-30 22:01:14,401 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 22:01:14,401 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 22:01:16,687 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 22:01:16,756 - pipeline.run - INFO - Fit models
+2020-03-30 22:01:50,219 - pipeline.run - INFO - Data handling
+2020-03-30 22:01:50,220 - pipeline.run - INFO - Loading prepared data
+2020-03-30 22:01:50,543 - pipeline.run.features - INFO - Loaded prepared train data
+2020-03-30 22:01:50,543 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is {len(self.df_train)}
+2020-03-30 22:01:53,136 - pipeline.run.features - INFO - Scaling Features
+2020-03-30 22:01:53,207 - pipeline.run - INFO - Fit models

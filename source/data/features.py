@@ -126,7 +126,7 @@ class Features():
         return df
 
     @staticmethod
-    def parallel_feature_engineering(df_to_split, df_full, n_cores=4):
+    def parallel_feature_engineering(df_to_split, df_full, n_cores=8):
         """Function to enable multi threading for feature engineering"""
         func = Features.engineer_features
         df_splits = np.array_split(df_to_split, n_cores)

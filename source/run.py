@@ -6,6 +6,7 @@ from source.models.random_forest import RandomForest
 from source.models.xg_boost import XGBoost
 from source.models.neural_network import NeuralNetwork
 from source.hyperparamters.grid_search import GridSearch
+from source.pca import pca
 import logging
 
 
@@ -31,6 +32,7 @@ def run(config):
         f.prepare_df_test()
 
     X_train = f.df_train.drop(['hotel_cluster'], axis=1).to_numpy()
+    pca(config, f.df_train.drop(['hotel_cluster'], axis=1))  # TESTING
     y_train = f.df_train['hotel_cluster'].to_numpy()
     if config.getboolean('General', 'use_test'):
         X_test = f.df_test.to_numpy()
@@ -40,12 +42,13 @@ def run(config):
 
     features = f.df_train.drop(['hotel_cluster'], axis=1).columns
 
-    """MODELS AND GRID SEARCH"""
+    """TRAIN AND EVALUATE MODELS"""
     logger.info('Fit models')
     models = [
         {'model': DecisionTree, 'fitted': None},
         {'model': RandomForest, 'fitted': None},
         {'model': NeuralNetwork, 'fitted': None},
+        {'model': XGBoost, 'fitted': None},
     ]
 
     for m in models:
@@ -55,9 +58,10 @@ def run(config):
         m['fitted'] = fitted_model
         logger.info(f'{fitted_model.clf_name} | Score: {fitted_model.score}')
 
-    logger.info('Perform grid search')
+    """PERFORM GRID SEARCH"""
     if config.getboolean('GridSearch', 'perform_grid_search'):
-        for m in models[:-1]:
+        logger.info('Perform grid search')
+        for m in models[:-2]:
             not_fitted_model = m['model']
             gs = GridSearch(config, not_fitted_model, X_train, y_train)
             gs.search()
@@ -65,29 +69,29 @@ def run(config):
             del gs
 
     # TODO: Can the xg_boost ever take in all the features?
-    tree = models[0]['fitted']
-    feature_importances = pd.DataFrame(tree.clf.feature_importances_,
-                                       index=features,
-                                       columns=['importance'])\
-        .sort_values('importance', ascending=False)
-    X_train_xgb = f.df_train.drop(['hotel_cluster'], axis=1)\
-        .loc[:, feature_importances.index[:50]].to_numpy()
-    xgb = XGBoost(config,
-                  X_train_xgb,
-                  y_train)
-    xgb.train_model()
-    xgb.calc_cross_val_score()
-    logger.info(f'XGB | Score: {xgb.score}')
-
-    if config.getboolean('GridSearch', 'perform_grid_search'):
-        gs = GridSearch(config,
-                        XGBoost,
-                        X_train_xgb,
-                        y_train)
-        gs.search()
-        gs.print_best_results()
+    # tree = models[0]['fitted']
+    # feature_importances = pd.DataFrame(tree.clf.feature_importances_,
+    #                                    index=features,
+    #                                    columns=['importance'])\
+    #     .sort_values('importance', ascending=False)
+    # X_train_xgb = f.df_train.drop(['hotel_cluster'], axis=1)\
+    #     .loc[:, feature_importances.index[:50]].to_numpy()
+    # xgb = XGBoost(config,
+    #               X_train_xgb,
+    #               y_train)
+    # xgb.train_model()
+    # xgb.calc_cross_val_score()
+    # logger.info(f'XGB | Score: {xgb.score}')
+    #
+    # if config.getboolean('GridSearch', 'perform_grid_search'):
+    #     gs = GridSearch(config,
+    #                     XGBoost,
+    #                     X_train_xgb,
+    #                     y_train)
+    #     gs.search()
+    #     gs.print_best_results()
 
     """DATA REMOVAL"""
-    logger.info('Remove data from hard drive')
     if config.get('Data', 'remove_after_run') == 'True':
+        logger.info('Remove data from hard drive')
         d.remove_data()

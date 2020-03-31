@@ -46,9 +46,9 @@ def run(config):
     logger.info('Fit models')
     models = [
         {'model': DecisionTree, 'fitted': None},
-        {'model': RandomForest, 'fitted': None},
-        {'model': NeuralNetwork, 'fitted': None},
-        {'model': XGBoost, 'fitted': None},
+        #{'model': RandomForest, 'fitted': None},
+        #{'model': NeuralNetwork, 'fitted': None},
+        #{'model': XGBoost, 'fitted': None},
     ]
 
     for m in models:
@@ -56,7 +56,7 @@ def run(config):
         fitted_model.train_model()
         fitted_model.calc_cross_val_score()
         m['fitted'] = fitted_model
-        logger.info(f'{fitted_model.clf_name} | Score: {fitted_model.score}')
+        logger.info(f'{fitted_model.clf_name} score: {fitted_model.score}')
 
     """PERFORM GRID SEARCH"""
     if config.getboolean('GridSearch', 'perform_grid_search'):
@@ -67,29 +67,6 @@ def run(config):
             gs.search()
             gs.print_best_results()
             del gs
-
-    # TODO: Can the xg_boost ever take in all the features?
-    # tree = models[0]['fitted']
-    # feature_importances = pd.DataFrame(tree.clf.feature_importances_,
-    #                                    index=features,
-    #                                    columns=['importance'])\
-    #     .sort_values('importance', ascending=False)
-    # X_train_xgb = f.df_train.drop(['hotel_cluster'], axis=1)\
-    #     .loc[:, feature_importances.index[:50]].to_numpy()
-    # xgb = XGBoost(config,
-    #               X_train_xgb,
-    #               y_train)
-    # xgb.train_model()
-    # xgb.calc_cross_val_score()
-    # logger.info(f'XGB | Score: {xgb.score}')
-    #
-    # if config.getboolean('GridSearch', 'perform_grid_search'):
-    #     gs = GridSearch(config,
-    #                     XGBoost,
-    #                     X_train_xgb,
-    #                     y_train)
-    #     gs.search()
-    #     gs.print_best_results()
 
     """DATA REMOVAL"""
     if config.get('Data', 'remove_after_run') == 'True':

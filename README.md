@@ -1,7 +1,7 @@
 ## Expedia project - predicting hotel clusters
 
 ### Environment setup
-This command will create a python environment (make sure to be in the project directory):
+This command will create a python3 environment (make sure to be in the project directory + need to have python3 installed):
 ```console
 $ python3 -m venv venv
 ```

@@ -46,9 +46,9 @@ def run(config):
     logger.info('Fit models')
     models = [
         {'model': DecisionTree, 'fitted': None},
-        #{'model': RandomForest, 'fitted': None},
-        #{'model': NeuralNetwork, 'fitted': None},
-        #{'model': XGBoost, 'fitted': None},
+        {'model': RandomForest, 'fitted': None},
+        {'model': NeuralNetwork, 'fitted': None},
+        {'model': XGBoost, 'fitted': None},
     ]
 
     for m in models:

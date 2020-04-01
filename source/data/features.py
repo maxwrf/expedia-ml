@@ -154,7 +154,7 @@ class Features():
             Features.logger.info('Loaded prepared train data')
 
             # Warn config train len not the same as the prepared one
-            Features.logger.info('The loaded train data has a different len than\
+            Features.logger.info(f'The loaded train data has a different len than\
                   given in the config. train len is {len(self.df_train)}')
 
             return

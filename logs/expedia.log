@@ -1,9 +1,12 @@
-2020-04-01 13:53:44,460 - pipeline.run - INFO - Data handling
-2020-04-01 13:53:44,460 - pipeline.run - INFO - Loading prepared data
-2020-04-01 13:53:44,753 - pipeline.run.features - INFO - Loaded prepared train data
-2020-04-01 13:53:44,753 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is 16669
-2020-04-01 13:53:47,447 - pipeline.run.features - INFO - Scaling Features
-2020-04-01 13:53:47,517 - pipeline.run - INFO - Fit models
-2020-04-01 13:53:52,543 - pipeline.run - INFO - Decision Tree score: 0.39695936762549955
-2020-04-01 13:54:18,312 - pipeline.run - INFO - Random Forest score: 0.48340895771730386
-2020-04-01 13:59:52,832 - pipeline.run - INFO - NeuralNetwork score: 0.4162794358037785
+2020-04-04 21:33:19,632 - pipeline.run - INFO - Data handling
+2020-04-04 21:33:19,633 - pipeline.run - INFO - Loading prepared data
+2020-04-04 21:33:19,919 - pipeline.run.features - INFO - Loaded prepared train data
+2020-04-04 21:33:19,919 - pipeline.run.features - INFO - The loaded train data has a different len than                  given in the config. train len is 16669
+2020-04-04 21:33:22,497 - pipeline.run - INFO - train, holdout, test split is 98% | 1% | 1%
+2020-04-04 21:33:22,497 - pipeline.run.features - INFO - Scaling Features
+2020-04-04 21:33:22,617 - pipeline.run - INFO - Fit models
+2020-04-04 21:33:24,040 - pipeline.run - INFO - Decision Tree score: 0.46
+2020-04-04 21:33:31,540 - pipeline.run - INFO - Random Forest score: 0.5066666666666667
+2020-04-04 21:34:25,966 - pipeline.run - INFO - NeuralNetwork score: 0.42
+2020-04-04 21:34:26,039 - pipeline.run - INFO - Best model: Random Forest                   test score: 0.4782608695652174
+2020-04-04 21:34:26,205 - pipeline.email - INFO - Start sending logs by email

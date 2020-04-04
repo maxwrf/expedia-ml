@@ -43,6 +43,9 @@ class BaseModel():
         else:
             raise Exception('Model not defined.')
 
+    def predict(self, X):
+        return self.clf.predict(X)
+
     def calc_cross_val_score(self):
         score = np.mean(cross_val_score(self.clf,
                                         self.X,

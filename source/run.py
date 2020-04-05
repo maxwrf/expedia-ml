@@ -6,9 +6,11 @@ from source.models.xg_boost import XGBoost
 from source.models.neural_network import NeuralNetwork
 from source.hyperparamters.grid_search import GridSearch
 from source.pca import pca
+from source.data_leakage import Exploit
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 import logging
+from IPython import embed
 
 
 def run(config):
@@ -28,28 +30,33 @@ def run(config):
         f = Features(config)
 
     f.prepare_df_train()
+    f.df_train.drop('Unnamed: 0', axis=1, inplace=True)
 
     if config.getboolean('General', 'use_test'):
         f.prepare_df_test()
 
-    X_train = f.df_train.drop(['hotel_cluster'], axis=1).to_numpy()
-    pca(config, f.df_train.drop(['hotel_cluster'], axis=1))  # TESTING
-    y_train = f.df_train['hotel_cluster'].to_numpy()
+    X_train = f.df_train.drop(['hotel_cluster'], axis=1)
+    pca(config, f.df_train.drop(['hotel_cluster'], axis=1))
+    y_train = f.df_train['hotel_cluster']
 
     if config.getboolean('General', 'use_test'):
-
         X_test = f.df_test.to_numpy()
         X_train, X_test = Features.scale_features(X_train, X_test)
     else:
         logger.info('train, holdout, test split is 98% | 1% | 1%')
-        X_train = Features.scale_features(X_train)
         X_train, X_holdout_test, y_train, y_holdout_test = train_test_split(
             X_train, y_train, test_size=0.02, random_state=420)
         X_holdout, X_test, y_holdout, y_test = train_test_split(
             X_holdout_test, y_holdout_test, test_size=0.55, random_state=420)
+        X_columns = X_train.columns
+        X_train, X_holdout, X_test = Features.scale_features(X_train,
+                                                             X_holdout, X_test)
+
+        exploit = Exploit(X_train, y_train, X_columns)
 
     """TRAIN AND EVALUATE MODELS"""
     logger.info('Fit models')
+
     models = [
         {'model': DecisionTree, 'fitted': None},
         {'model': RandomForest, 'fitted': None},
@@ -67,7 +74,7 @@ def run(config):
         if config.getboolean('General', 'cross_validation'):
             fitted_model.calc_cross_val_score()
         else:
-            preds_holdout = fitted_model.predict(X_holdout)
+            preds_holdout = fitted_model.predict(X_holdout, exploit)
             fitted_model.score = accuracy_score(y_holdout, preds_holdout)
 
         logger.info(f'{fitted_model.clf_name} score: {fitted_model.score}')

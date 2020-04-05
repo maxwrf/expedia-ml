@@ -2,6 +2,7 @@ from abc import abstractmethod
 import numpy as np
 from sklearn.model_selection import cross_val_score
 import warnings
+from IPython import embed
 
 warnings.simplefilter("ignore")
 
@@ -43,8 +44,10 @@ class BaseModel():
         else:
             raise Exception('Model not defined.')
 
-    def predict(self, X):
-        return self.clf.predict(X)
+    def predict(self, X, exploit):
+        preds_model = self.clf.predict(X)
+        preds_exploit = exploit.predict(X).to_numpy()
+        return np.where(np.isnan(preds_exploit), preds_model, preds_exploit)
 
     def calc_cross_val_score(self):
         score = np.mean(cross_val_score(self.clf,

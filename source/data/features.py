@@ -20,12 +20,14 @@ class Features():
         self.data_path = self.project_path + '/data/'
 
     @staticmethod
-    def scale_features(X_train, X_test=None):
+    def scale_features(X_train, X_holdout=None, X_test=None):
         Features.logger.info('Scaling Features')
         Features.pipeline.fit(X_train)
-        if X_test:
-            return Features.pipeline.transform(X_train),
-            Features.pipeline.transform(X_test)
+
+        if X_test is not None and X_holdout is None:
+            return Features.pipeline.transform(X_train), Features.pipeline.transform(X_test)
+        elif X_holdout is not None and X_test is not None:
+            return Features.pipeline.transform(X_train), Features.pipeline.transform(X_holdout), Features.pipeline.transform(X_test)
         else:
             return Features.pipeline.transform(X_train)
 
